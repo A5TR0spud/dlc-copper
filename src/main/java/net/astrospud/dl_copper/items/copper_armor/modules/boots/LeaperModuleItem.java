@@ -5,6 +5,7 @@ import net.astrospud.dl_copper.registration.DLC_Items;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
@@ -23,6 +24,7 @@ public class LeaperModuleItem extends ModuleItem {
                 float f = -MathHelper.sin(yaw * 0.017453292F);
                 float h = MathHelper.cos(yaw * 0.017453292F);
                 player.addVelocity(0.02f * f, 0.02, 0.02f * h);
+                world.addParticle(ParticleTypes.CLOUD.getType(), player.getX(), player.getY()+0.15+(player.getRandom().nextFloat()*0.75), player.getZ(), (0.5f*player.getVelocity().x)+(0.25*(0.5-player.getRandom().nextFloat())), 0, (0.5f*player.getVelocity().z)+(0.25*(0.5-player.getRandom().nextFloat())));
                 didSomething = true;
                 if (counter == 10) {
                     stack.damage(1, player, (p) -> {

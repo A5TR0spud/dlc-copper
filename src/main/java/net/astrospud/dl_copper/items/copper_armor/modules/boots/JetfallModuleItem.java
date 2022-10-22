@@ -22,7 +22,9 @@ public class JetfallModuleItem extends ModuleItem {
             float multiplier = 0.7f;
             player.fallDistance *= multiplier;
             player.setVelocity(player.getVelocity().multiply(1, multiplier, 1));
-            world.addParticle(ParticleTypes.FLAME, player.getX(), player.getY(), player.getZ(), player.getVelocity().x+(multiplier*0.25*(0.5-player.getRandom().nextFloat())), player.getVelocity().y*(2-multiplier), player.getVelocity().z+(multiplier*0.25*(0.5-player.getRandom().nextFloat())));
+            for (int i = 0; i < 3; i++) {
+                world.addParticle(ParticleTypes.FLAME, player.getX(), player.getY(), player.getZ(), player.getVelocity().x + (multiplier * 0.25 * (0.5 - player.getRandom().nextFloat())), player.getVelocity().y * (2 - multiplier), player.getVelocity().z + (multiplier * 0.25 * (0.5 - player.getRandom().nextFloat())));
+            }
         }
     }
 }
