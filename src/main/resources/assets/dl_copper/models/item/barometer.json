@@ -1,0 +1,16 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "dl_copper:item/barometer/barometer_unknown"
+  },
+  "overrides": [
+    {"predicate": {"barometer_weather": 0}, "model": "dl_copper:item/barometer/weather_0"},
+    {"predicate": {"barometer_weather": 0.125}, "model": "dl_copper:item/barometer/weather_1"},
+    {"predicate": {"barometer_weather": 0.25}, "model": "dl_copper:item/barometer/weather_2"},
+    {"predicate": {"barometer_weather": 0.375}, "model": "dl_copper:item/barometer/weather_3"},
+    {"predicate": {"barometer_weather": 0.5}, "model": "dl_copper:item/barometer/weather_4"},
+    {"predicate": {"barometer_weather": 0.625}, "model": "dl_copper:item/barometer/weather_5"},
+    {"predicate": {"barometer_weather": 0.75}, "model": "dl_copper:item/barometer/weather_6"},
+    {"predicate": {"barometer_weather": 0.875}, "model": "dl_copper:item/barometer/weather_7"}
+  ]
+}

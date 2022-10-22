@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "dl_copper:empty_module"
+    },
+    "X": {
+      "item": "minecraft:copper_ingot"
+    }
+  },
+  "pattern": [
+    "# #",
+    "X X"
+  ],
+  "result": {
+    "item": "dl_copper:copper_boots"
+  }
+}

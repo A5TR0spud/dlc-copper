@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:copper_ingot"
+    },
+    "X": {
+      "item": "minecraft:redstone"
+    },
+    "g": {
+      "item": "minecraft:glass_pane"
+    }
+  },
+  "pattern": [
+    " ##",
+    "#g#",
+    "#X#"
+  ],
+  "result": {
+    "item": "dl_copper:empty_module"
+  }
+}

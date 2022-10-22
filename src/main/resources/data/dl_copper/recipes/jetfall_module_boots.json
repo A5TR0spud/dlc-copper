@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "dl_copper:empty_module"
+    },
+    "X": {
+      "item": "minecraft:feather"
+    },
+    "g": [
+      {"item": "minecraft:coal"},
+      {"item": "minecraft:charcoal"}
+    ]
+  },
+  "pattern": [
+    "g g",
+    "X#X"
+  ],
+  "result": {
+    "item": "dl_copper:jetfall_module_boots"
+  }
+}

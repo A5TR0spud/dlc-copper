@@ -1,0 +1,11 @@
+{
+  "item.dl_copper.barometer": "Barometer",
+  "item.dl_copper.copper_boots": "Copper Boots",
+  "item.dl_copper.copper_leggings": "Copper Greaves",
+  "item.dl_copper.flamewaker_module_boots": "Flamewaker Module (Boots)",
+  "item.dl_copper.jetfall_module_boots": "Jetfall Module (Boots)",
+  "item.dl_copper.copper_hammer": "Copper Hammer",
+  "tooltip.dl_copper.module": "Works in inventory",
+  "tooltip.dl_copper.copper_armor": "Doesn't do much on its own",
+  "item.dl_copper.empty_module": "Empty Module"
+}

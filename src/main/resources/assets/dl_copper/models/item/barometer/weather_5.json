@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "dl_copper:item/barometer/barometer_pressure"
+  }
+}
