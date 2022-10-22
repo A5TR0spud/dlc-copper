@@ -20,7 +20,7 @@ public class ModuleItem extends Item {
     Item linkedItem;
     int count = 0;
     public ModuleItem(Settings settings, Item armorItem) {
-        super(settings.maxDamage(256));
+        super(settings);
         this.linkedItem = armorItem;
     }
 
@@ -28,7 +28,6 @@ public class ModuleItem extends Item {
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         super.appendTooltip(stack, world, tooltip, context);
         tooltip.add(Text.translatable("tooltip.dl_copper.module").formatted(Formatting.GRAY));
-        specialTooltip(stack, world, tooltip, context, this.count);
     }
 
     @Override
@@ -50,7 +49,7 @@ public class ModuleItem extends Item {
             for (int i = 0; i < player.getInventory().size(); i++) {
                 if (player.getInventory().getStack(i).getItem() == this.asItem()) {
                     if (i == slot) {
-                        specialTick(stack, world, player, slot, selected, count, getMaxUpgrade());
+                        specialTick(stack, world, player, slot, selected, count);
                     }
                     count++;
                 }
@@ -59,15 +58,17 @@ public class ModuleItem extends Item {
         }
     }
 
-    public void specialTick(ItemStack stack, World world, PlayerEntity player, int slot, boolean selected, int index, int maxCount) {
+    public void specialTick(ItemStack stack, World world, PlayerEntity player, int slot, boolean selected, int index) {
 
     }
 
-    public int getMaxUpgrade() {
-        return 1;
+    @Override
+    public boolean isEnchantable(ItemStack stack) {
+        return true;
     }
 
-    public void specialTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context, int count) {
-
+    @Override
+    public int getEnchantability() {
+        return 5;
     }
 }

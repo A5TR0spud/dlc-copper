@@ -10,11 +10,11 @@ import net.minecraft.world.World;
 
 public class JetfallModuleItem extends ModuleItem {
     public JetfallModuleItem(Settings settings) {
-        super(settings, DLC_Items.COPPER_BOOTS);
+        super(settings.maxDamage(256), DLC_Items.COPPER_BOOTS);
     }
 
     @Override
-    public void specialTick(ItemStack stack, World world, PlayerEntity player, int slot, boolean selected, int index, int maxCount) {
+    public void specialTick(ItemStack stack, World world, PlayerEntity player, int slot, boolean selected, int index) {
         if (index == 0 && player.fallDistance > player.getSafeFallDistance()) {
             stack.damage(1, player, (p) -> {
                 p.getInventory().setStack(slot, ItemStack.EMPTY);

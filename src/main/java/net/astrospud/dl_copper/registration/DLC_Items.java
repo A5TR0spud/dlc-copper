@@ -6,6 +6,7 @@ import net.astrospud.dl_copper.items.CopperHammerItem;
 import net.astrospud.dl_copper.items.copper_armor.CopperArmorItem;
 import net.astrospud.dl_copper.items.copper_armor.modules.boots.FlamewakerModuleItem;
 import net.astrospud.dl_copper.items.copper_armor.modules.boots.JetfallModuleItem;
+import net.astrospud.dl_copper.items.copper_armor.modules.boots.LeaperModuleItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.Item;
@@ -17,6 +18,7 @@ public class DLC_Items {
     public static Item BAROMETER;
     public static Item FLAMEWAKER_MODULE_BOOTS;
     public static Item JETFALL_MODULE_BOOTS;
+    public static Item LEAPER_MODULE_BOOTS;
     public static Item COPPER_BOOTS = registerItem(new CopperArmorItem(EquipmentSlot.FEET, new FabricItemSettings().group(ItemGroup.TOOLS)), "copper_boots");
     public static Item COPPER_LEGGINGS = registerItem(new CopperArmorItem(EquipmentSlot.LEGS, new FabricItemSettings().group(ItemGroup.TOOLS)), "copper_leggings");
     public static Item COPPER_HAMMER;
@@ -32,6 +34,7 @@ public class DLC_Items {
         BarometerModelPredicates.register();
         FLAMEWAKER_MODULE_BOOTS = registerItem(new FlamewakerModuleItem(new FabricItemSettings()), "flamewaker_module_boots");
         JETFALL_MODULE_BOOTS = registerItem(new JetfallModuleItem(new FabricItemSettings().group(ItemGroup.TOOLS)), "jetfall_module_boots");
+        LEAPER_MODULE_BOOTS = registerItem(new LeaperModuleItem(new FabricItemSettings().group(ItemGroup.TOOLS)), "leaper_module_leggings");
         COPPER_HAMMER = registerItem(new CopperHammerItem(), "copper_hammer");
         EMPTY_MODULE = registerItem(new Item(new FabricItemSettings().group(ItemGroup.MATERIALS)), "empty_module");
         DL_Copper.LOGGER.info("Items - Registered");

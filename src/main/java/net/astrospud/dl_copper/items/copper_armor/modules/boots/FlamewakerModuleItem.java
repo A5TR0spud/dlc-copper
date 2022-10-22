@@ -14,11 +14,11 @@ public class FlamewakerModuleItem extends ModuleItem {
     BlockPos oldPos = null;
 
     public FlamewakerModuleItem(Settings settings) {
-        super(settings, DLC_Items.COPPER_BOOTS);
+        super(settings.maxDamage(256), DLC_Items.COPPER_BOOTS);
     }
 
     @Override
-    public void specialTick(ItemStack stack, World world, PlayerEntity player, int slot, boolean selected, int index, int maxCount) {
+    public void specialTick(ItemStack stack, World world, PlayerEntity player, int slot, boolean selected, int index) {
         if (index == 2) {
             BlockPos pos = player.getBlockPos();
             if (oldPos != null && oldPos != pos && world.getBlockState(pos).isAir() && world.getBlockState(pos.down()).hasSolidTopSurface(world, pos.down(), player)) {
