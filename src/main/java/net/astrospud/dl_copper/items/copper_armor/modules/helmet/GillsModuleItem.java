@@ -30,4 +30,9 @@ public class GillsModuleItem extends ModuleItem {
         if (counter > 40) counter = 0;
         if (didSomething) counter++;
     }
+
+    @Override
+    public int maxLevel() {
+        return 3;
+    }
 }

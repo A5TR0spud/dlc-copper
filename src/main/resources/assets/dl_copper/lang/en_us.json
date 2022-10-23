@@ -14,5 +14,11 @@
   "item.dl_copper.copper_hammer": "Copper Hammer",
   "tooltip.dl_copper.module": "Works in inventory",
   "tooltip.dl_copper.copper_armor": "Doesn't do much on its own",
-  "item.dl_copper.empty_module": "Empty Module"
+  "item.dl_copper.empty_module": "Empty Module",
+
+  "tooltip.dl_copper.max.1": "Max Level 1",
+  "tooltip.dl_copper.max.2": "Max Level 2",
+  "tooltip.dl_copper.max.3": "Max Level 3",
+  "tooltip.dl_copper.max.4": "Max Level 4",
+  "tooltip.dl_copper.max.5": "Max Level 5"
 }

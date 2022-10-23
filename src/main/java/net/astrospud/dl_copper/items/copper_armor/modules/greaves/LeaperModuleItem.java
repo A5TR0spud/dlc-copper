@@ -50,4 +50,9 @@ public class LeaperModuleItem extends ModuleItem {
         if (counter > 20) counter = 0;
         if (didSomething) counter++;
     }
+
+    @Override
+    public int maxLevel() {
+        return 2;
+    }
 }

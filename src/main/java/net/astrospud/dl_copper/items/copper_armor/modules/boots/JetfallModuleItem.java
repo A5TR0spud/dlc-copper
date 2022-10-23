@@ -38,4 +38,9 @@ public class JetfallModuleItem extends ModuleItem {
             }
         }
     }
+
+    @Override
+    public int maxLevel() {
+        return 2;
+    }
 }

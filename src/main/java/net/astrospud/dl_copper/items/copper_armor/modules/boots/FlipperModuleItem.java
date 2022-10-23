@@ -38,4 +38,9 @@ public class FlipperModuleItem extends ModuleItem {
         if (counter > 60) counter = 0;
         if (didSomething) counter++;
     }
+
+    @Override
+    public int maxLevel() {
+        return 2;
+    }
 }

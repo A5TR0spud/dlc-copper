@@ -28,6 +28,8 @@ public class ModuleItem extends Item {
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         super.appendTooltip(stack, world, tooltip, context);
         tooltip.add(Text.translatable("tooltip.dl_copper.module").formatted(Formatting.GRAY));
+        Text t = Text.translatable("tooltip.dl_copper.max." + this.maxLevel()).formatted(Formatting.GRAY);
+        tooltip.add(t);
     }
 
     @Override
@@ -70,5 +72,9 @@ public class ModuleItem extends Item {
     @Override
     public int getEnchantability() {
         return 5;
+    }
+
+    public int maxLevel() {
+        return 1;
     }
 }

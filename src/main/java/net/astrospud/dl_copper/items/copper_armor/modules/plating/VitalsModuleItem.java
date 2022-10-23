@@ -28,4 +28,9 @@ public class VitalsModuleItem extends ModuleItem {
         if (counter > 80) counter = 0;
         counter++;
     }
+
+    @Override
+    public int maxLevel() {
+        return 3;
+    }
 }
