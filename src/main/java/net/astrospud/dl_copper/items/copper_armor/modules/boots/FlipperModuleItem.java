@@ -19,7 +19,7 @@ public class FlipperModuleItem extends ModuleItem {
     public void specialTick(ItemStack stack, World world, PlayerEntity player, int slot, boolean selected, int index) {
         boolean didSomething = false;
         if (index <= 1) {
-            if (!player.isOnGround() && !player.getAbilities().flying && player.getVelocity().length() > 0.125f && !player.hasStatusEffect(StatusEffects.LEVITATION) && player.isSwimming()) {
+            if (!player.isOnGround() && !player.getAbilities().flying && !player.hasStatusEffect(StatusEffects.LEVITATION) && player.isSwimming()) {
                 float yaw = player.getYaw();
                 float pitch = player.getPitch();
                 float f = -MathHelper.sin(yaw * 0.017453292F) * MathHelper.cos(pitch * 0.017453292F);
