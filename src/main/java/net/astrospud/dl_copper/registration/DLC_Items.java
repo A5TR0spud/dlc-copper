@@ -9,6 +9,7 @@ import net.astrospud.dl_copper.items.copper_armor.modules.boots.FlipperModuleIte
 import net.astrospud.dl_copper.items.copper_armor.modules.boots.JetfallModuleItem;
 import net.astrospud.dl_copper.items.copper_armor.modules.greaves.LeaperModuleItem;
 import net.astrospud.dl_copper.items.copper_armor.modules.helmet.GillsModuleItem;
+import net.astrospud.dl_copper.items.copper_armor.modules.helmet.SatiatorModuleItem;
 import net.astrospud.dl_copper.items.copper_armor.modules.plating.VitalsModuleItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.EquipmentSlot;
@@ -25,6 +26,7 @@ public class DLC_Items {
     public static Item VITALS_MODULE_PLATING;
     public static Item FLIPPER_MODULE_BOOTS;
     public static Item GILLS_MODULE_HELMET;
+    public static Item SATIATOR_MODULE_HELMET;
     public static Item COPPER_HELMET = registerItem(new CopperArmorItem(EquipmentSlot.HEAD, new FabricItemSettings().group(ItemGroup.TOOLS)), "copper_helmet");
     public static Item COPPER_CHESTPLATE = registerItem(new CopperArmorItem(EquipmentSlot.CHEST, new FabricItemSettings().group(ItemGroup.TOOLS)), "copper_chestplate");
     public static Item COPPER_LEGGINGS = registerItem(new CopperArmorItem(EquipmentSlot.LEGS, new FabricItemSettings().group(ItemGroup.TOOLS)), "copper_leggings");
@@ -46,6 +48,7 @@ public class DLC_Items {
         VITALS_MODULE_PLATING = registerItem(new VitalsModuleItem(new FabricItemSettings().group(ItemGroup.TOOLS)), "vitals_module_plating");
         FLIPPER_MODULE_BOOTS = registerItem(new FlipperModuleItem(new FabricItemSettings().group(ItemGroup.TOOLS)), "flipper_module_boots");
         GILLS_MODULE_HELMET = registerItem(new GillsModuleItem(new FabricItemSettings().group(ItemGroup.TOOLS)), "gills_module_helmet");
+        SATIATOR_MODULE_HELMET = registerItem(new SatiatorModuleItem(new FabricItemSettings().group(ItemGroup.TOOLS)), "satiator_module_helmet");
         COPPER_HAMMER = registerItem(new CopperHammerItem(), "copper_hammer");
         EMPTY_MODULE = registerItem(new Item(new FabricItemSettings().group(ItemGroup.MATERIALS)), "empty_module");
         DL_Copper.LOGGER.info("Items - Registered");

@@ -17,7 +17,7 @@ public class CopperHammerItem extends MiningToolItem {
     static Settings settings = (new Item.Settings()).group(ItemGroup.TOOLS).fireproof().maxDamage(2048);
 
     public CopperHammerItem() {
-        super(attackDamage, attackSpeed, material, BlockTags.PICKAXE_MINEABLE, settings);
+        super(attackDamage, attackSpeed, material, BlockTags.PICKAXE_MINEABLE, settings.maxDamage(190));
     }
 
     @Override

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "dl_copper:empty_module"
+    },
+    "X": {
+      "item": "minecraft:golden_carrot"
+    },
+    "g": [
+      {"item": "minecraft:coal"},
+      {"item": "minecraft:charcoal"}
+    ]
+  },
+  "pattern": [
+    "X#X",
+    "g g"
+  ],
+  "result": {
+    "item": "dl_copper:satiator_module_helmet"
+  }
+}
