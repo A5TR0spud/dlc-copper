@@ -12,8 +12,8 @@ import net.minecraft.world.World;
 
 public class CopperHammerItem extends MiningToolItem {
     static ToolMaterial material = DLCToolMaterials.COPPER;
-    static float attackDamage = 2;
-    static float attackSpeed = -3.2F;
+    static float attackDamage = 6;
+    static float attackSpeed = -4.5F;
     static Settings settings = (new Item.Settings()).group(ItemGroup.TOOLS).fireproof().maxDamage(2048);
 
     public CopperHammerItem() {
