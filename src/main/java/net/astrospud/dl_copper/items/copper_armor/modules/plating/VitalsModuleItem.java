@@ -15,6 +15,8 @@ public class VitalsModuleItem extends ModuleItem {
 
     @Override
     public void specialTick(ItemStack stack, World world, PlayerEntity player, int slot, boolean selected, int index) {
+        if (player.getDamageTracker().wasRecentlyAttacked()) counter = 0;
+
         if (index <=2 && player.getHealth() < player.getMaxHealth() && counter == 40) {
             player.heal(1);
             stack.damage(1, player, (p) -> {
