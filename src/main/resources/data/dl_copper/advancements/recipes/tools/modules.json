@@ -13,9 +13,33 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_the_recipe": {
+    "has_jetfall_recipe": {
       "conditions": {
         "recipe": "dl_copper:jetfall_module_boots"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_flipper_recipe": {
+      "conditions": {
+        "recipe": "dl_copper:flipper_module_boots"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_leaper_recipe": {
+      "conditions": {
+        "recipe": "dl_copper:leaper_module_leggings"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_vitals_recipe": {
+      "conditions": {
+        "recipe": "dl_copper:vitals_module_plating"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_gills_recipe": {
+      "conditions": {
+        "recipe": "dl_copper:gills_module_helmet"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -23,12 +47,27 @@
   "requirements": [
     [
       "has_empty_module",
-      "has_the_recipe"
+
+      "has_jetfall_recipe",
+      "has_flipper_recipe",
+
+      "has_leaper_recipe",
+
+      "has_vitals_recipe",
+
+      "has_gills_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "dl_copper:jetfall_module_boots"
+      "dl_copper:jetfall_module_boots",
+      "dl_copper:flipper_module_boots",
+
+      "dl_copper:leaper_module_leggings",
+
+      "dl_copper:vitals_module_plating",
+
+      "dl_copper:gills_module_helmet"
     ]
   }
 }

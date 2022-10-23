@@ -17,8 +17,8 @@ public class GillsModuleItem extends ModuleItem {
     @Override
     public void specialTick(ItemStack stack, World world, PlayerEntity player, int slot, boolean selected, int index) {
         boolean didSomething = false;
-        if (index == 0 && player.getAir() < player.getMaxAir()) {
-            player.setAir(player.getAir() + 1);
+        if (index <=2 && player.getAir() < player.getMaxAir()) {
+            if (counter % 2 == 0) player.setAir(player.getAir() + 1);
             didSomething = true;
             if (counter == 20) {
                 stack.damage(1, player, (p) -> {

@@ -4,22 +4,21 @@
     "#": {
       "item": "dl_copper:empty_module"
     },
-    "X": {
-      "item": "minecraft:feather"
-    },
-    "P": {
-      "item": "minecraft:phantom_membrane"
-    },
+    "X": [
+      {"item": "minecraft:rabbit_foot"},
+      {"item": "minecraft:slime_ball"}
+    ],
     "g": [
       {"item": "minecraft:coal"},
       {"item": "minecraft:charcoal"}
     ]
   },
   "pattern": [
-    "g g",
-    "X#P"
+    "X X",
+    "g#g",
+    "X X"
   ],
   "result": {
-    "item": "dl_copper:jetfall_module_boots"
+    "item": "dl_copper:leaper_module_leggings"
   }
 }

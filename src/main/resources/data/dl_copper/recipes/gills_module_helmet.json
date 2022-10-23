@@ -5,10 +5,7 @@
       "item": "dl_copper:empty_module"
     },
     "X": {
-      "item": "minecraft:feather"
-    },
-    "P": {
-      "item": "minecraft:phantom_membrane"
+      "item": "minecraft:pufferfish"
     },
     "g": [
       {"item": "minecraft:coal"},
@@ -16,10 +13,10 @@
     ]
   },
   "pattern": [
-    "g g",
-    "X#P"
+    "X#X",
+    "g g"
   ],
   "result": {
-    "item": "dl_copper:jetfall_module_boots"
+    "item": "dl_copper:gills_module_helmet"
   }
 }
