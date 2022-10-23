@@ -20,7 +20,7 @@ public class ModuleItem extends Item {
     Item linkedItem;
     int count = 0;
     public ModuleItem(Settings settings, Item armorItem) {
-        super(settings);
+        super(settings.maxDamage(256));
         this.linkedItem = armorItem;
     }
 

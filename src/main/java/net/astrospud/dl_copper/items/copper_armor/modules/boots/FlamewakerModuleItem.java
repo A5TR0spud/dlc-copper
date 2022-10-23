@@ -14,7 +14,7 @@ public class FlamewakerModuleItem extends ModuleItem {
     BlockPos oldPos = null;
 
     public FlamewakerModuleItem(Settings settings) {
-        super(settings.maxDamage(256), DLC_Items.COPPER_BOOTS);
+        super(settings, DLC_Items.COPPER_BOOTS);
     }
 
     @Override

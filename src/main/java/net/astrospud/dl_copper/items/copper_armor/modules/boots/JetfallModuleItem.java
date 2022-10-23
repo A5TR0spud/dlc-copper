@@ -10,7 +10,7 @@ import net.minecraft.world.World;
 
 public class JetfallModuleItem extends ModuleItem {
     public JetfallModuleItem(Settings settings) {
-        super(settings.maxDamage(256), DLC_Items.COPPER_BOOTS);
+        super(settings, DLC_Items.COPPER_BOOTS);
     }
 
     @Override

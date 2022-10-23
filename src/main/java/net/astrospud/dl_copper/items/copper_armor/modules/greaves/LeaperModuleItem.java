@@ -1,4 +1,4 @@
-package net.astrospud.dl_copper.items.copper_armor.modules.boots;
+package net.astrospud.dl_copper.items.copper_armor.modules.greaves;
 
 import net.astrospud.dl_copper.items.copper_armor.ModuleItem;
 import net.astrospud.dl_copper.registration.DLC_Items;
@@ -12,19 +12,19 @@ import net.minecraft.world.World;
 public class LeaperModuleItem extends ModuleItem {
     int counter = 0;
     public LeaperModuleItem(Settings settings) {
-        super(settings.maxDamage(256), DLC_Items.COPPER_LEGGINGS);
+        super(settings, DLC_Items.COPPER_LEGGINGS);
     }
 
     @Override
     public void specialTick(ItemStack stack, World world, PlayerEntity player, int slot, boolean selected, int index) {
         boolean didSomething = false;
         if (index == 0) {
-            if (!player.isOnGround() && !player.getAbilities().flying && player.getVelocity().multiply(1, 0, 1).length() > 0.125f && player.getVelocity().y > 0 && !player.hasStatusEffect(StatusEffects.LEVITATION)) {
+            if (!player.isTouchingWater() && !player.isOnGround() && !player.getAbilities().flying && player.getVelocity().multiply(1, 0, 1).length() > 0.125f && player.getVelocity().y > 0 && !player.hasStatusEffect(StatusEffects.LEVITATION)) {
                 float yaw = player.getYaw();
                 float f = -MathHelper.sin(yaw * 0.017453292F);
                 float h = MathHelper.cos(yaw * 0.017453292F);
-                player.addVelocity(0.02f * f, 0.02, 0.02f * h);
-                world.addParticle(ParticleTypes.CLOUD.getType(), player.getX(), player.getY()+0.15+(player.getRandom().nextFloat()*0.75), player.getZ(), (0.5f*player.getVelocity().x)+(0.25*(0.5-player.getRandom().nextFloat())), 0, (0.5f*player.getVelocity().z)+(0.25*(0.5-player.getRandom().nextFloat())));
+                player.addVelocity(0.0175f * f, 0.015, 0.0175f * h);
+                world.addParticle(ParticleTypes.CLOUD.getType(), player.getX(), ((player.getY()+player.getEyeY())/2)-(player.getStandingEyeHeight()/2)+(player.getRandom().nextFloat()*0.75), player.getZ(), (0.5f*player.getVelocity().x)+(0.25*(0.5-player.getRandom().nextFloat())), 0, (0.5f*player.getVelocity().z)+(0.25*(0.5-player.getRandom().nextFloat())));
                 didSomething = true;
                 if (counter == 10) {
                     stack.damage(1, player, (p) -> {
@@ -38,7 +38,7 @@ public class LeaperModuleItem extends ModuleItem {
                 float yaw = player.getYaw();
                 float f = -MathHelper.sin(yaw * 0.017453292F);
                 float h = MathHelper.cos(yaw * 0.017453292F);
-                player.addVelocity(0.02f * f, 0.01, 0.02f * h);
+                player.addVelocity(0.0125f * f, 0.015, 0.0125f * h);
                 didSomething = true;
                 if (counter == 10) {
                     stack.damage(1, player, (p) -> {
@@ -47,7 +47,7 @@ public class LeaperModuleItem extends ModuleItem {
                 }
             }
         }
-        if (counter > 20 && didSomething) counter = 0;
+        if (counter > 20) counter = 0;
         if (didSomething) counter++;
     }
 }
