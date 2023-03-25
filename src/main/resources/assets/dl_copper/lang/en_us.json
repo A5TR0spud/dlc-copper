@@ -12,8 +12,10 @@
   "item.dl_copper.gills_module_helmet": "Gills Module (Helmet)",
   "item.dl_copper.satiator_module_helmet": "Satiator Module (Helmet)",
   "item.dl_copper.copper_hammer": "Copper Hammer",
+  "item.dl_copper.battery_pack": "Battery Pack",
   "tooltip.dl_copper.module": "Works in inventory",
   "tooltip.dl_copper.copper_armor": "Doesn't do much on its own",
+  "tooltip.dl_copper.battery_pack": "Repairs modules",
   "item.dl_copper.empty_module": "Empty Module",
 
   "tooltip.dl_copper.max.1": "Max Level 1",

@@ -1,13 +1,11 @@
 package net.astrospud.dl_copper.items.copper_armor;
 
-import net.astrospud.dl_copper.DL_Copper;
-import net.astrospud.dl_copper.registration.DLC_Items;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
@@ -19,6 +17,7 @@ import java.util.List;
 public class ModuleItem extends Item {
     Item linkedItem;
     int count = 0;
+    protected int counter = 0;
     public ModuleItem(Settings settings, Item armorItem) {
         super(settings.maxDamage(256));
         this.linkedItem = armorItem;
@@ -35,6 +34,13 @@ public class ModuleItem extends Item {
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         super.inventoryTick(stack, world, entity, slot, selected);
+
+        NbtCompound nbt = stack.getOrCreateNbt();
+
+        if (nbt.contains("DLC_COUNTER")) {
+            counter = nbt.getInt("DLC_COUNTER");
+        }
+
         if (entity instanceof PlayerEntity player) {
             ArrayList<ItemStack> armor = new ArrayList<>();
             entity.getArmorItems().forEach(armor::add);
@@ -58,10 +64,20 @@ public class ModuleItem extends Item {
             }
             this.count = count;
         }
+
+        nbt.putInt("DLC_COUNTER", counter);
     }
 
     public void specialTick(ItemStack stack, World world, PlayerEntity player, int slot, boolean selected, int index) {
 
+    }
+
+    public int getCounter() {
+        return counter;
+    }
+
+    public void setCounter(int c) {
+        count = c;
     }
 
     @Override

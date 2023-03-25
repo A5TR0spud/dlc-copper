@@ -17,11 +17,11 @@ public class SatiatorModuleItem extends ModuleItem {
         if (index == 0 && player.getHungerManager().isNotFull()) {
             for (int i = 0; i < player.getInventory().size(); i++) {
                 ItemStack item = player.getInventory().getStack(i);
-                if (item.isFood() && item.getItem().getFoodComponent().getHunger() <= 20 - player.getHungerManager().getFoodLevel()) {
+                if (item.isFood() && item.getItem().getFoodComponent() != null && item.getItem().getFoodComponent().getHunger() <= player.getHungerManager().getFoodLevel()) {
                     player.eatFood(world, item);
                     player.getInventory().setStack(i, item);
                     stack.damage(1, player, (p) -> {
-                        p.getInventory().setStack(slot, ItemStack.EMPTY);
+                        p.getInventory().setStack(slot, DLC_Items.EMPTY_MODULE.getDefaultStack());
                     });
                 }
             }

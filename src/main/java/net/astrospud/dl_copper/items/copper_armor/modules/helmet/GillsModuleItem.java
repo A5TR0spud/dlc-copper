@@ -8,8 +8,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 public class GillsModuleItem extends ModuleItem {
-    int counter = 0;
-
     public GillsModuleItem(Settings settings) {
         super(settings, DLC_Items.COPPER_HELMET);
     }
@@ -22,7 +20,7 @@ public class GillsModuleItem extends ModuleItem {
             didSomething = true;
             if (counter == 20) {
                 stack.damage(1, player, (p) -> {
-                    p.getInventory().setStack(slot, ItemStack.EMPTY);
+                    p.getInventory().setStack(slot, DLC_Items.EMPTY_MODULE.getDefaultStack());
                 });
             }
         }

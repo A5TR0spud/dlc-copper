@@ -25,6 +25,12 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
+    "has_flamewaker_recipe": {
+      "conditions": {
+        "recipe": "dl_copper:flamewaker_module_boots"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
     "has_leaper_recipe": {
       "conditions": {
         "recipe": "dl_copper:leaper_module_leggings"
@@ -56,6 +62,7 @@
 
       "has_jetfall_recipe",
       "has_flipper_recipe",
+      "has_flamewaker_recipe",
 
       "has_leaper_recipe",
 
@@ -69,6 +76,7 @@
     "recipes": [
       "dl_copper:jetfall_module_boots",
       "dl_copper:flipper_module_boots",
+      "dl_copper:flamewaker_module_boots",
 
       "dl_copper:leaper_module_leggings",
 

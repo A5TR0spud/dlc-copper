@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:copper_ingot"
+    },
+    "X": {
+      "item": "minecraft:redstone_block"
+    },
+    "g": [
+      {"item": "minecraft:coal"},
+      {"item": "minecraft:charcoal"}
+    ]
+  },
+  "pattern": [
+    "###",
+    "gXg",
+    "###"
+  ],
+  "result": {
+    "item": "dl_copper:battery_pack"
+  }
+}

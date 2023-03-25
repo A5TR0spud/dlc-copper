@@ -10,7 +10,6 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
 public class FlipperModuleItem extends ModuleItem {
-    int counter = 0;
     public FlipperModuleItem(Settings settings) {
         super(settings, DLC_Items.COPPER_BOOTS);
     }
@@ -30,7 +29,7 @@ public class FlipperModuleItem extends ModuleItem {
                 didSomething = true;
                 if (counter == 30) {
                     stack.damage(1, player, (p) -> {
-                        p.getInventory().setStack(slot, ItemStack.EMPTY);
+                        p.getInventory().setStack(slot, DLC_Items.EMPTY_MODULE.getDefaultStack());
                     });
                 }
             }

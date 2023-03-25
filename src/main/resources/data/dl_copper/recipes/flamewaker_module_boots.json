@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "dl_copper:empty_module"
+    },
+    "X": {
+      "item": "minecraft:magma_block"
+    },
+    "g": [
+      {"item": "minecraft:coal"},
+      {"item": "minecraft:charcoal"}
+    ]
+  },
+  "pattern": [
+    "g g",
+    "X#X"
+  ],
+  "result": {
+    "item": "dl_copper:flamewaker_module_boots"
+  }
+}

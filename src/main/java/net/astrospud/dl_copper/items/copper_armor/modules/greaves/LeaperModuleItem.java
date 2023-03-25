@@ -10,7 +10,6 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
 public class LeaperModuleItem extends ModuleItem {
-    int counter = 0;
     public LeaperModuleItem(Settings settings) {
         super(settings, DLC_Items.COPPER_LEGGINGS);
     }
@@ -28,7 +27,7 @@ public class LeaperModuleItem extends ModuleItem {
                 didSomething = true;
                 if (counter == 10) {
                     stack.damage(1, player, (p) -> {
-                        p.getInventory().setStack(slot, ItemStack.EMPTY);
+                        p.getInventory().setStack(slot, DLC_Items.EMPTY_MODULE.getDefaultStack());
                     });
                 }
             }
@@ -42,7 +41,7 @@ public class LeaperModuleItem extends ModuleItem {
                 didSomething = true;
                 if (counter == 10) {
                     stack.damage(1, player, (p) -> {
-                        p.getInventory().setStack(slot, ItemStack.EMPTY);
+                        p.getInventory().setStack(slot, DLC_Items.EMPTY_MODULE.getDefaultStack());
                     });
                 }
             }
