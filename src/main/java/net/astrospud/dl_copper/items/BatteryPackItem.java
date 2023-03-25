@@ -32,7 +32,7 @@ public class BatteryPackItem extends Item {
                 if (module.isDamaged()) {
                     module.setDamage(module.getDamage() - 1);
                     stack.damage(1, player, (p) -> {
-                        p.getInventory().setStack(slot, DLC_Items.EMPTY_MODULE.getDefaultStack());
+                        p.getInventory().setStack(slot, DLC_Items.BATTERY_PACK_EMPTY.getDefaultStack());
                     });
                 }
             }

@@ -13,9 +13,11 @@ import java.util.List;
 
 public class CopperArmorItem extends ArmorItem {
     static ArmorMaterial material = DLCArmorMaterials.COPPER;
-    public CopperArmorItem(EquipmentSlot slot, Settings settings) {
-        super(material, slot, settings);
+
+    public CopperArmorItem(Type type, Settings settings) {
+        super(material, type, settings);
     }
+
 
     @Override
     public boolean canRepair(ItemStack stack, ItemStack ingredient) {

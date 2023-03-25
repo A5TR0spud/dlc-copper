@@ -1,11 +1,9 @@
 package net.astrospud.dl_copper.items.materials;
 
-import net.minecraft.item.ArmorMaterials;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.tag.ItemTags;
 import net.minecraft.util.Lazy;
 
 import java.util.function.Supplier;

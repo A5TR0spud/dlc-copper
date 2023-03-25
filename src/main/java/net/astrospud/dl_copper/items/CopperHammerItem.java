@@ -1,23 +1,18 @@
 package net.astrospud.dl_copper.items;
 
 import net.astrospud.dl_copper.items.materials.DLCToolMaterials;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.*;
-import net.minecraft.tag.BlockTags;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.registry.tag.BlockTags;
 
 public class CopperHammerItem extends MiningToolItem {
     static ToolMaterial material = DLCToolMaterials.COPPER;
     static float attackDamage = 6;
-    static float attackSpeed = -4.5F;
-    static Settings settings = (new Item.Settings()).group(ItemGroup.TOOLS).fireproof().maxDamage(2048);
+    static float attackSpeed = 1.1F-4F;
+    static Settings settings = (new Item.Settings()).fireproof().maxDamage(190);
 
     public CopperHammerItem() {
-        super(attackDamage, attackSpeed, material, BlockTags.PICKAXE_MINEABLE, settings.maxDamage(190));
+        super(attackDamage, attackSpeed, material, BlockTags.PICKAXE_MINEABLE, settings);
     }
 
     @Override
