@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "dl_copper:empty_module"
+    },
+    "X": {
+      "item": "minecraft:daylight_sensor"
+    },
+    "g": [
+      {"item": "minecraft:coal"},
+      {"item": "minecraft:charcoal"}
+    ]
+  },
+  "pattern": [
+    "X#X",
+    "g g"
+  ],
+  "result": {
+    "item": "dl_copper:solar_module_helmet"
+  }
+}

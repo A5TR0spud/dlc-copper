@@ -23,21 +23,38 @@ public class BatteryPackItem extends Item {
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         super.inventoryTick(stack, world, entity, slot, selected);
 
-        if (!(entity instanceof PlayerEntity player))
-            return;
+        if (entity instanceof PlayerEntity player) {
+            int r = chargeInventory(stack, world, entity, slot, selected, 1);
+            if (r > 0) {
+                stack.damage(r, player, (p) -> {
+                    p.getInventory().setStack(slot, DLC_Items.BATTERY_PACK_EMPTY.getDefaultStack());
+                });
+            }
+        }
+    }
 
-        for (int i = 0; i < player.getInventory().size(); i++) {
-            if (player.getInventory().getStack(i).getItem() instanceof ModuleItem) {
-                ItemStack module = player.getInventory().getStack(i);
-                if (module.isDamaged()) {
-                    module.setDamage(module.getDamage() - 1);
-                    stack.damage(1, player, (p) -> {
-                        p.getInventory().setStack(slot, DLC_Items.BATTERY_PACK_EMPTY.getDefaultStack());
-                    });
+    public static int chargeInventory(ItemStack stack, World world, Entity entity, int slot, boolean selected, int charge) {
+        if (!(entity instanceof PlayerEntity player))
+            return 0;
+        int r = 0;
+        for (int i = 0; i < player.getInventory().size() && r < charge; i++) {
+            ItemStack stack1 = player.getInventory().getStack(i);
+            if (i != slot && stack1 != stack) {
+                if (stack1.isDamaged() && stack1.getItem() instanceof ModuleItem) {
+                    stack1.setDamage(stack1.getDamage() - 1);
+                    r++;
+                } else if (stack1.getItem() == DLC_Items.BATTERY_PACK_EMPTY) {
+                    ItemStack initPack = DLC_Items.BATTERY_PACK.getDefaultStack();
+                    initPack.setDamage(initPack.getMaxDamage() - 1);
+                    player.getInventory().setStack(i, initPack);
+                    r++;
+                } else if (stack1.getItem() instanceof BatteryPackItem) {
+                    stack1.setDamage(stack1.getDamage() - 1);
+                    r++;
                 }
             }
         }
-
+        return r;
     }
 
     @Override

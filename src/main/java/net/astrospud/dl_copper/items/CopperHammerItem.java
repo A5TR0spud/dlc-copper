@@ -8,7 +8,7 @@ import net.minecraft.registry.tag.BlockTags;
 public class CopperHammerItem extends MiningToolItem {
     static ToolMaterial material = DLCToolMaterials.COPPER;
     static float attackDamage = 6;
-    static float attackSpeed = 1.1F-4F;
+    static float attackSpeed = -2.9F;
     static Settings settings = (new Item.Settings()).fireproof().maxDamage(190);
 
     public CopperHammerItem() {

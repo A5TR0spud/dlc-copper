@@ -10,6 +10,7 @@
   "item.dl_copper.leaper_module_leggings": "Leaper Module (Greaves)",
   "item.dl_copper.vitals_module_plating": "Vitals Module (Plating)",
   "item.dl_copper.gills_module_helmet": "Gills Module (Helmet)",
+  "item.dl_copper.solar_module_helmet": "Solar Module (Helmet)",
   "item.dl_copper.satiator_module_helmet": "Satiator Module (Helmet)",
   "item.dl_copper.copper_hammer": "Copper Hammer",
   "item.dl_copper.battery_pack": "Battery Pack",
@@ -18,6 +19,7 @@
   "tooltip.dl_copper.copper_armor": "Doesn't do much on its own",
   "tooltip.dl_copper.battery_pack": "Repairs modules",
   "item.dl_copper.empty_module": "Empty Module",
+  "item.dl_copper.burnt_module": "Burnt Module",
 
   "tooltip.dl_copper.max.1": "Max Level 1",
   "tooltip.dl_copper.max.2": "Max Level 2",
