@@ -48,7 +48,7 @@ public class BatteryPackItem extends Item {
                     initPack.setDamage(initPack.getMaxDamage() - 1);
                     player.getInventory().setStack(i, initPack);
                     r++;
-                } else if (stack1.getItem() instanceof BatteryPackItem) {
+                } else if (stack1.getItem() instanceof BatteryPackItem && stack.getItem() != DLC_Items.BATTERY_PACK) {
                     stack1.setDamage(stack1.getDamage() - 1);
                     r++;
                 }
