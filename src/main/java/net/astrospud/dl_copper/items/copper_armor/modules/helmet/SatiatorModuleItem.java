@@ -27,4 +27,9 @@ public class SatiatorModuleItem extends ModuleItem {
             }
         }
     }
+
+    @Override
+    public String id() {
+        return "satiator_helmet";
+    }
 }

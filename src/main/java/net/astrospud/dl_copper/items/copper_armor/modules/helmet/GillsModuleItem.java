@@ -14,7 +14,7 @@ public class GillsModuleItem extends ModuleItem {
 
     @Override
     public void specialTick(ItemStack stack, World world, PlayerEntity player, int slot, boolean selected, int index) {
-        boolean didSomething = false;
+        didSomething = false;
         if (index <=2 && player.getAir() < player.getMaxAir()) {
             if (counter % 2 == 0) player.setAir(player.getAir() + 1);
             didSomething = true;
@@ -24,6 +24,11 @@ public class GillsModuleItem extends ModuleItem {
                 });
             }
         }
+    }
+
+    @Override
+    public void afterTick(ItemStack stack, World world, PlayerEntity player, int slot, boolean selected) {
+        super.afterTick(stack, world, player, slot, selected);
 
         if (counter > 40) counter = 0;
         if (didSomething) counter++;
@@ -32,5 +37,10 @@ public class GillsModuleItem extends ModuleItem {
     @Override
     public int maxLevel() {
         return 3;
+    }
+
+    @Override
+    public String id() {
+        return "gills_helmet";
     }
 }

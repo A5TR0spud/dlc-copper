@@ -25,6 +25,11 @@ public class VitalsModuleItem extends ModuleItem {
                 world.addParticle(ParticleTypes.HEART, player.getX()+(0.5-player.getRandom().nextFloat()), (player.getY()+player.getEyeY())/2, player.getZ()+(0.5-player.getRandom().nextFloat()), 0,0,0);
             }
         }
+    }
+
+    @Override
+    public void afterTick(ItemStack stack, World world, PlayerEntity player, int slot, boolean selected) {
+        super.afterTick(stack, world, player, slot, selected);
 
         if (counter > 80) counter = 0;
         counter++;
@@ -33,5 +38,10 @@ public class VitalsModuleItem extends ModuleItem {
     @Override
     public int maxLevel() {
         return 3;
+    }
+
+    @Override
+    public String id() {
+        return "vitals_plating";
     }
 }

@@ -13,10 +13,13 @@ public class LeaperModuleItem extends ModuleItem {
     public LeaperModuleItem(Settings settings) {
         super(settings, DLC_Items.COPPER_LEGGINGS);
     }
+    public LeaperModuleItem(Settings settings, boolean isComputer) {
+        super(settings, DLC_Items.COPPER_LEGGINGS, isComputer);
+    }
 
     @Override
     public void specialTick(ItemStack stack, World world, PlayerEntity player, int slot, boolean selected, int index) {
-        boolean didSomething = false;
+        didSomething = false;
         if (index == 0) {
             if (!player.isTouchingWater() && !player.isOnGround() && !player.getAbilities().flying && player.getVelocity().multiply(1, 0, 1).length() > 0.125f && player.getVelocity().y > 0 && !player.hasStatusEffect(StatusEffects.LEVITATION)) {
                 float yaw = player.getYaw();
@@ -46,6 +49,12 @@ public class LeaperModuleItem extends ModuleItem {
                 }
             }
         }
+    }
+
+    @Override
+    public void afterTick(ItemStack stack, World world, PlayerEntity player, int slot, boolean selected) {
+        super.afterTick(stack, world, player, slot, selected);
+
         if (counter > 20) counter = 0;
         if (didSomething) counter++;
     }
@@ -53,5 +62,10 @@ public class LeaperModuleItem extends ModuleItem {
     @Override
     public int maxLevel() {
         return 2;
+    }
+
+    @Override
+    public String id() {
+        return "leaper_greaves";
     }
 }

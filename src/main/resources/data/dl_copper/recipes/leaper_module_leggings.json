@@ -14,8 +14,8 @@
     ]
   },
   "pattern": [
-    "X X",
-    "g#g",
+    "X#X",
+    "g g",
     "X X"
   ],
   "result": {

@@ -46,4 +46,9 @@ public class FlamewakerModuleItem extends ModuleItem {
     public int maxLevel() {
         return 3;
     }
+
+    @Override
+    public String id() {
+        return "flamewaker_boots";
+    }
 }

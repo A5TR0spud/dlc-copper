@@ -6,8 +6,11 @@
   "item.dl_copper.copper_helmet": "Copper Helmet",
   "item.dl_copper.flamewaker_module_boots": "Flamewaker Module (Boots)",
   "item.dl_copper.jetfall_module_boots": "Jetfall Module (Boots)",
+  "item.dl_copper.jetfall_computer_boots": "Jetfall Computer (Boots)",
   "item.dl_copper.flipper_module_boots": "Flipper Module (Boots)",
+  "item.dl_copper.flipper_computer_boots": "Flipper Computer (Boots)",
   "item.dl_copper.leaper_module_leggings": "Leaper Module (Greaves)",
+  "item.dl_copper.leaper_computer_leggings": "Leaper Computer (Greaves)",
   "item.dl_copper.vitals_module_plating": "Vitals Module (Plating)",
   "item.dl_copper.gills_module_helmet": "Gills Module (Helmet)",
   "item.dl_copper.solar_module_helmet": "Solar Module (Helmet)",
@@ -25,5 +28,11 @@
   "tooltip.dl_copper.max.2": "Max Level 2",
   "tooltip.dl_copper.max.3": "Max Level 3",
   "tooltip.dl_copper.max.4": "Max Level 4",
-  "tooltip.dl_copper.max.5": "Max Level 5"
+  "tooltip.dl_copper.max.5": "Max Level 5",
+
+  "tooltip.dl_copper.comp.1": "Level 1",
+  "tooltip.dl_copper.comp.2": "Level 2",
+  "tooltip.dl_copper.comp.3": "Level 3",
+  "tooltip.dl_copper.comp.4": "Level 4",
+  "tooltip.dl_copper.comp.5": "Level 5"
 }

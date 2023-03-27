@@ -10,13 +10,17 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
 public class FlipperModuleItem extends ModuleItem {
+    public FlipperModuleItem(Settings settings, boolean isComputer) {
+        super(settings, DLC_Items.COPPER_BOOTS, isComputer);
+    }
+
     public FlipperModuleItem(Settings settings) {
         super(settings, DLC_Items.COPPER_BOOTS);
     }
 
     @Override
     public void specialTick(ItemStack stack, World world, PlayerEntity player, int slot, boolean selected, int index) {
-        boolean didSomething = false;
+        didSomething = false;
         if (index <= 1) {
             if (!player.isOnGround() && !player.getAbilities().flying && !player.hasStatusEffect(StatusEffects.LEVITATION) && player.isSwimming()) {
                 float yaw = player.getYaw();
@@ -34,6 +38,12 @@ public class FlipperModuleItem extends ModuleItem {
                 }
             }
         }
+    }
+
+    @Override
+    public void afterTick(ItemStack stack, World world, PlayerEntity player, int slot, boolean selected) {
+        super.afterTick(stack, world, player, slot, selected);
+
         if (counter > 60) counter = 0;
         if (didSomething) counter++;
     }
@@ -41,5 +51,10 @@ public class FlipperModuleItem extends ModuleItem {
     @Override
     public int maxLevel() {
         return 2;
+    }
+
+    @Override
+    public String id() {
+        return "flipper_boots";
     }
 }

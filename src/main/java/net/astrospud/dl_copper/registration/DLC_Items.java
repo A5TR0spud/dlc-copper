@@ -24,9 +24,12 @@ public class DLC_Items {
     public static Item BAROMETER;
     public static Item FLAMEWAKER_MODULE_BOOTS;
     public static Item JETFALL_MODULE_BOOTS;
+    public static Item JETFALL_COMPUTER_BOOTS;
     public static Item LEAPER_MODULE_LEGGINGS;
+    public static Item LEAPER_COMPUTER_LEGGINGS;
     public static Item VITALS_MODULE_PLATING;
     public static Item FLIPPER_MODULE_BOOTS;
+    public static Item FLIPPER_COMPUTER_BOOTS;
     public static Item GILLS_MODULE_HELMET;
     public static Item SATIATOR_MODULE_HELMET;
     public static Item SOLAR_MODULE_HELMET;
@@ -55,9 +58,12 @@ public class DLC_Items {
         BURNT_MODULE = registerItem(new Item(new FabricItemSettings()), "burnt_module");
         FLAMEWAKER_MODULE_BOOTS = registerItem(new FlamewakerModuleItem(new FabricItemSettings()), "flamewaker_module_boots");
         JETFALL_MODULE_BOOTS = registerItem(new JetfallModuleItem(new FabricItemSettings()), "jetfall_module_boots");
+        JETFALL_COMPUTER_BOOTS = registerItem(new JetfallModuleItem(new FabricItemSettings(), true), "jetfall_computer_boots");
         LEAPER_MODULE_LEGGINGS = registerItem(new LeaperModuleItem(new FabricItemSettings()), "leaper_module_leggings");
+        LEAPER_COMPUTER_LEGGINGS = registerItem(new LeaperModuleItem(new FabricItemSettings(), true), "leaper_computer_leggings");
         VITALS_MODULE_PLATING = registerItem(new VitalsModuleItem(new FabricItemSettings()), "vitals_module_plating");
         FLIPPER_MODULE_BOOTS = registerItem(new FlipperModuleItem(new FabricItemSettings()), "flipper_module_boots");
+        FLIPPER_COMPUTER_BOOTS = registerItem(new FlipperModuleItem(new FabricItemSettings(), true), "flipper_computer_boots");
         GILLS_MODULE_HELMET = registerItem(new GillsModuleItem(new FabricItemSettings()), "gills_module_helmet");
         SOLAR_MODULE_HELMET = registerItem(new SolarModuleItem(new FabricItemSettings()), "solar_module_helmet");
         SATIATOR_MODULE_HELMET = registerItem(new SatiatorModuleItem(new FabricItemSettings()), "satiator_module_helmet");
@@ -116,6 +122,17 @@ public class DLC_Items {
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> {
             content.addAfter(JETFALL_MODULE_BOOTS, FLIPPER_MODULE_BOOTS);
+        });
+
+        //computers
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> {
+            content.addAfter(FLIPPER_MODULE_BOOTS, FLIPPER_COMPUTER_BOOTS);
+        });
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> {
+            content.addAfter(JETFALL_MODULE_BOOTS, JETFALL_COMPUTER_BOOTS);
+        });
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> {
+            content.addAfter(LEAPER_MODULE_LEGGINGS, LEAPER_COMPUTER_LEGGINGS);
         });
         DL_Copper.LOGGER.info("Item Groups - Registered");
     }

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:comparator"
+    },
+    "X": {
+      "item": "dl_copper:flipper_module_boots"
+    },
+    "H": {
+      "item": "minecraft:heart_of_the_sea"
+    }
+  },
+  "pattern": [
+    "XX ",
+    "#H#"
+  ],
+  "result": {
+    "item": "dl_copper:flipper_computer_boots"
+  }
+}

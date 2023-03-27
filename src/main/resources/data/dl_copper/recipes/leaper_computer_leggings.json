@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:comparator"
+    },
+    "X": {
+      "item": "dl_copper:leaper_module_leggings"
+    },
+    "H": {
+      "item": "minecraft:firework_rocket"
+    }
+  },
+  "pattern": [
+    "XX ",
+    "#H#"
+  ],
+  "result": {
+    "item": "dl_copper:leaper_computer_leggings"
+  }
+}

@@ -13,21 +13,33 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class ModuleItem extends Item {
     Item linkedItem;
     int count = 0;
     protected int counter = 0;
+    boolean computer;
+    protected boolean didSomething;
+    public ModuleItem(Settings settings, Item armorItem, boolean isComputer) {
+        super(settings.maxDamage(256));
+        this.linkedItem = armorItem;
+        this.computer = isComputer;
+    }
+
     public ModuleItem(Settings settings, Item armorItem) {
         super(settings.maxDamage(256));
         this.linkedItem = armorItem;
+        this.computer = false;
     }
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         super.appendTooltip(stack, world, tooltip, context);
         tooltip.add(Text.translatable("tooltip.dl_copper.module").formatted(Formatting.GRAY));
-        Text t = Text.translatable("tooltip.dl_copper.max." + this.maxLevel()).formatted(Formatting.GRAY);
+        Text t = this.isComputer() ?
+                Text.translatable("tooltip.dl_copper.comp." + this.maxLevel()).formatted(Formatting.GRAY)
+                : Text.translatable("tooltip.dl_copper.max." + this.maxLevel()).formatted(Formatting.GRAY);
         tooltip.add(t);
     }
 
@@ -54,14 +66,31 @@ public class ModuleItem extends Item {
             if (!wearing) return;
 
             int count = 0;
-            for (int i = 0; i < player.getInventory().size(); i++) {
-                if (player.getInventory().getStack(i).getItem() == this.asItem()) {
+            for (int i = 0; i <= slot && count < this.maxLevel(); i++) {
+                ItemStack itemStack = player.getInventory().getStack(i);
+                if (itemStack.getItem() instanceof ModuleItem mod && Objects.equals(mod.id(), this.id())) {
+                    //if there's a computer in the inventory of the same type, do nothing
+                    if (mod.isComputer() && slot != i)
+                        break;
+
+                    //this i == slot statement runs when the code has found its physical form
                     if (i == slot) {
-                        specialTick(stack, world, player, slot, selected, count);
+                        if (this.isComputer()) {
+                            for (int g = count; g < this.maxLevel(); g++) {
+                                specialTick(stack, world, player, slot, selected, g);
+                            }
+                            if (count < this.maxLevel())
+                                afterTick(stack, world, player, slot, selected);
+                            break;
+                        } else {
+                            specialTick(stack, world, player, slot, selected, count);
+                            afterTick(stack, world, player, slot, selected);
+                        }
                     }
                     count++;
                 }
             }
+
             this.count = count;
         }
 
@@ -69,6 +98,10 @@ public class ModuleItem extends Item {
     }
 
     public void specialTick(ItemStack stack, World world, PlayerEntity player, int slot, boolean selected, int index) {
+
+    }
+
+    public void afterTick(ItemStack stack, World world, PlayerEntity player, int slot, boolean selected) {
 
     }
 
@@ -92,5 +125,13 @@ public class ModuleItem extends Item {
 
     public int maxLevel() {
         return 1;
+    }
+
+    public boolean isComputer() {
+        return computer;
+    }
+
+    public String id() {
+        return "";
     }
 }

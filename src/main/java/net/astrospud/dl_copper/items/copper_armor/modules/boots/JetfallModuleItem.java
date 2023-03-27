@@ -13,6 +13,10 @@ public class JetfallModuleItem extends ModuleItem {
         super(settings, DLC_Items.COPPER_BOOTS);
     }
 
+    public JetfallModuleItem(Settings settings, boolean isComputer) {
+        super(settings, DLC_Items.COPPER_BOOTS, isComputer);
+    }
+
     @Override
     public void specialTick(ItemStack stack, World world, PlayerEntity player, int slot, boolean selected, int index) {
         if (index == 0 && player.fallDistance > player.getSafeFallDistance()) {
@@ -27,7 +31,7 @@ public class JetfallModuleItem extends ModuleItem {
             }
         }
 
-        boolean didSomething = false;
+        didSomething = false;
 
         if (index == 1 && player.fallDistance > 0) {
             if (counter == 30) {
@@ -40,6 +44,11 @@ public class JetfallModuleItem extends ModuleItem {
             world.addParticle(ParticleTypes.CLOUD, player.getX(), player.getY(), player.getZ(), player.getVelocity().x + (multiplier * 0.25 * (0.5 - player.getRandom().nextFloat())), player.getVelocity().y * (2 - multiplier), player.getVelocity().z + (multiplier * 0.25 * (0.5 - player.getRandom().nextFloat())));
             didSomething = true;
         }
+    }
+
+    @Override
+    public void afterTick(ItemStack stack, World world, PlayerEntity player, int slot, boolean selected) {
+        super.afterTick(stack, world, player, slot, selected);
 
         if (counter > 60) counter = 0;
         if (didSomething) counter++;
@@ -48,5 +57,10 @@ public class JetfallModuleItem extends ModuleItem {
     @Override
     public int maxLevel() {
         return 2;
+    }
+
+    @Override
+    public String id() {
+        return "jetfall_boots";
     }
 }

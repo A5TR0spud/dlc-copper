@@ -5,7 +5,7 @@
       "item": "dl_copper:empty_module"
     },
     "X": {
-      "item": "minecraft:daylight_sensor"
+      "item": "minecraft:daylight_detector"
     },
     "g": [
       {"item": "minecraft:coal"},

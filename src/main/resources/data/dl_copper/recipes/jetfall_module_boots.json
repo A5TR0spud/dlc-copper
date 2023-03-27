@@ -4,11 +4,8 @@
     "#": {
       "item": "dl_copper:empty_module"
     },
-    "X": {
-      "item": "minecraft:feather"
-    },
     "P": {
-      "item": "minecraft:phantom_membrane"
+      "item": "minecraft:firework_rocket"
     },
     "g": [
       {"item": "minecraft:coal"},
@@ -17,7 +14,7 @@
   },
   "pattern": [
     "g g",
-    "X#P"
+    "P#P"
   ],
   "result": {
     "item": "dl_copper:jetfall_module_boots"
