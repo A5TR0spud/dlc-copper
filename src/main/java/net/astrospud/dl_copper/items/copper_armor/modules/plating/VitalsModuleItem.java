@@ -11,12 +11,15 @@ public class VitalsModuleItem extends ModuleItem {
     public VitalsModuleItem(Settings settings) {
         super(settings, DLC_Items.COPPER_CHESTPLATE);
     }
+    public VitalsModuleItem(Settings settings, boolean isComputer) {
+        super(settings, DLC_Items.COPPER_CHESTPLATE, isComputer);
+    }
 
     @Override
     public void specialTick(ItemStack stack, World world, PlayerEntity player, int slot, boolean selected, int index) {
         if (player.getDamageTracker().wasRecentlyAttacked()) counter = 0;
 
-        if (index <=2 && player.getHealth() < player.getMaxHealth() && counter == 40) {
+        if (index <= 2 && player.getHealth() < player.getMaxHealth() && counter == 40) {
             player.heal(1);
             stack.damage(1, player, (p) -> {
                 p.getInventory().setStack(slot, DLC_Items.EMPTY_MODULE.getDefaultStack());

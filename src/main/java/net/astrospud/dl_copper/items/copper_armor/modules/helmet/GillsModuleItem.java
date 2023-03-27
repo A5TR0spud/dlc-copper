@@ -11,11 +11,13 @@ public class GillsModuleItem extends ModuleItem {
     public GillsModuleItem(Settings settings) {
         super(settings, DLC_Items.COPPER_HELMET);
     }
+    public GillsModuleItem(Settings settings, boolean isComputer) {
+        super(settings, DLC_Items.COPPER_HELMET, isComputer);
+    }
 
     @Override
     public void specialTick(ItemStack stack, World world, PlayerEntity player, int slot, boolean selected, int index) {
-        didSomething = false;
-        if (index <=2 && player.getAir() < player.getMaxAir()) {
+        if (index <= 2 && player.getAir() < player.getMaxAir()) {
             if (counter % 2 == 0) player.setAir(player.getAir() + 1);
             didSomething = true;
             if (counter == 20) {
@@ -32,6 +34,7 @@ public class GillsModuleItem extends ModuleItem {
 
         if (counter > 40) counter = 0;
         if (didSomething) counter++;
+        didSomething = false;
     }
 
     @Override

@@ -5,17 +5,17 @@
       "item": "minecraft:comparator"
     },
     "X": {
-      "item": "dl_copper:flipper_module_boots"
+      "item": "dl_copper:gills_module_helmet"
     },
     "H": {
-      "item": "minecraft:nautilus_shell"
+      "item": "minecraft:heart_of_the_sea"
     }
   },
   "pattern": [
-    "XX ",
+    "XXX",
     "#H#"
   ],
   "result": {
-    "item": "dl_copper:flipper_computer_boots"
+    "item": "dl_copper:gills_computer_helmet"
   }
 }

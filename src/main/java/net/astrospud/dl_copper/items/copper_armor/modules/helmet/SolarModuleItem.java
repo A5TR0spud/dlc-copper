@@ -11,6 +11,9 @@ public class SolarModuleItem extends ModuleItem {
     public SolarModuleItem(Settings settings) {
         super(settings, DLC_Items.COPPER_HELMET);
     }
+    public SolarModuleItem(Settings settings, boolean isComputer) {
+        super(settings, DLC_Items.COPPER_HELMET, isComputer);
+    }
 
     @Override
     public void specialTick(ItemStack stack, World world, PlayerEntity player, int slot, boolean selected, int index) {

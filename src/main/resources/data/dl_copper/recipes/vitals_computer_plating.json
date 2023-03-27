@@ -5,17 +5,17 @@
       "item": "minecraft:comparator"
     },
     "X": {
-      "item": "dl_copper:flipper_module_boots"
+      "item": "dl_copper:vitals_module_plating"
     },
     "H": {
-      "item": "minecraft:nautilus_shell"
+      "item": "minecraft:glistering_melon_slice"
     }
   },
   "pattern": [
-    "XX ",
+    "XXX",
     "#H#"
   ],
   "result": {
-    "item": "dl_copper:flipper_computer_boots"
+    "item": "dl_copper:vitals_computer_plating"
   }
 }

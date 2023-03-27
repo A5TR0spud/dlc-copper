@@ -7,10 +7,9 @@
     "X": {
       "item": "minecraft:daylight_detector"
     },
-    "g": [
-      {"item": "minecraft:coal"},
-      {"item": "minecraft:charcoal"}
-    ]
+    "g": {
+      "item": "minecraft:redstone"
+    }
   },
   "pattern": [
     "X#X",
