@@ -60,6 +60,12 @@
         "recipe": "dl_copper:solar_module_helmet"
       },
       "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_lightning_recipe": {
+      "conditions": {
+        "recipe": "dl_copper:lightning_module_plating"
+      },
+      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
@@ -76,7 +82,9 @@
 
       "has_gills_recipe",
       "has_satiator_recipe",
-      "has_solar_recipe"
+      "has_solar_recipe",
+
+      "has_lightning_recipe"
     ]
   ],
   "rewards": {
@@ -91,7 +99,9 @@
 
       "dl_copper:gills_module_helmet",
       "dl_copper:satiator_module_helmet",
-      "dl_copper:solar_module_helmet"
+      "dl_copper:solar_module_helmet",
+
+      "dl_copper:lightning_module_plating"
     ]
   }
 }

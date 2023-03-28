@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "dl_copper:empty_module"
+    },
+    "X": {
+      "item": "minecraft:lightning_rod"
+    },
+    "g": {
+      "item": "minecraft:redstone"
+    },
+    "R": {
+      "item": "minecraft:redstone_block"
+    }
+  },
+  "pattern": [
+    "X X",
+    "g#g",
+    "gRg"
+  ],
+  "result": {
+    "item": "dl_copper:lightning_module_plating"
+  }
+}
