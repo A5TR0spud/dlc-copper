@@ -17,7 +17,6 @@ import java.util.Objects;
 
 public class ModuleItem extends Item {
     Item linkedItem;
-    int count = 0;
     protected int counter = 0;
     boolean computer;
     protected boolean didSomething;
@@ -90,8 +89,6 @@ public class ModuleItem extends Item {
                     count++;
                 }
             }
-
-            this.count = count;
         }
 
         nbt.putInt("DLC_COUNTER", counter);
@@ -103,14 +100,6 @@ public class ModuleItem extends Item {
 
     public void afterTick(ItemStack stack, World world, PlayerEntity player, int slot, boolean selected) {
 
-    }
-
-    public int getCounter() {
-        return counter;
-    }
-
-    public void setCounter(int c) {
-        count = c;
     }
 
     @Override

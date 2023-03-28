@@ -1,8 +1,10 @@
 package net.astrospud.dl_copper.items.copper_armor.modules.boots;
 
 import net.astrospud.dl_copper.DL_Copper;
+import net.astrospud.dl_copper.entities.MoltenCopperEntity;
 import net.astrospud.dl_copper.items.copper_armor.CopperArmorItem;
 import net.astrospud.dl_copper.items.copper_armor.ModuleItem;
+import net.astrospud.dl_copper.registration.DLC_Entities;
 import net.astrospud.dl_copper.registration.DLC_Items;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
@@ -32,11 +34,16 @@ public class FlamewakerModuleItem extends ModuleItem {
         //floor fire
         if (index == 2) {
             BlockPos pos = player.getBlockPos();
-            if (oldPos != null && oldPos != pos && world.getBlockState(pos).isAir() && world.getBlockState(pos.down()).hasSolidTopSurface(world, pos.down(), player)) {
+            if (oldPos != null
+                    && oldPos != pos
+                    && player.isOnGround()) {
                 stack.damage(1, player, (p) -> {
                     p.getInventory().setStack(slot, DLC_Items.EMPTY_MODULE.getDefaultStack());
                 });
-                world.setBlockState(pos, Blocks.FIRE.getDefaultState());
+                MoltenCopperEntity c = new MoltenCopperEntity(player, world);
+                c.setPosition(player.getX() + player.getBoundingBox().getXLength() / 2 - c.getBoundingBox().getXLength() / 2, player.getY(), player.getZ() + player.getBoundingBox().getZLength() / 2 - c.getBoundingBox().getZLength() / 2);
+                world.spawnEntity(c);
+                //world.setBlockState(pos, Blocks.FIRE.getDefaultState());
             }
             this.oldPos = pos;
         }

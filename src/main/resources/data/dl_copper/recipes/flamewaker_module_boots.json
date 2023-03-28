@@ -7,6 +7,9 @@
     "X": {
       "item": "minecraft:magma_block"
     },
+    "1": {
+      "item": "minecraft:magma_cream"
+    },
     "g": [
       {"item": "minecraft:coal"},
       {"item": "minecraft:charcoal"}
@@ -14,7 +17,7 @@
   },
   "pattern": [
     "g g",
-    "X#X"
+    "X#1"
   ],
   "result": {
     "item": "dl_copper:flamewaker_module_boots"

@@ -13,6 +13,7 @@ import net.minecraft.entity.damage.DamageTypes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -28,8 +29,6 @@ import java.util.Objects;
 
 @Mixin(PlayerEntity.class)
 public class PlayerEntityMixin {
-	BlockPos oldPos;
-
 	@Inject(at = @At("HEAD"), method = "isInvulnerableTo", cancellable = true)
 	public void dlcIsInvulnerableTo(DamageSource damageSource, CallbackInfoReturnable<Boolean> cir) {
 		PlayerEntity player = (PlayerEntity) (Object) this;
@@ -37,46 +36,50 @@ public class PlayerEntityMixin {
 
 		for(int i = 0; i < inv.size(); ++i) {
 			ItemStack itemStack = inv.getStack(i);
-				if (itemStack.getItem() instanceof FlamewakerModuleItem fmi && itemStack.getNbt() != null && itemStack.getNbt().contains("DLC_INDEX")) {
-					int index = itemStack.getNbt().getInt("DLC_INDEX");
-					fmi = (FlamewakerModuleItem) itemStack.getItem();
-					int finalI = i;
-					if (index == 0) {
-						if (Objects.equals(damageSource.getName(), "hotFloor")) {
-							cir.setReturnValue(true);
-							if (oldPos != player.getBlockPos()) {
-								itemStack.damage(1, player, (p) -> {
-									p.getInventory().setStack(finalI, DLC_Items.EMPTY_MODULE.getDefaultStack());
-								});
-							}
-							oldPos = player.getBlockPos();
+			if (itemStack.getItem() instanceof FlamewakerModuleItem && itemStack.getNbt() != null && itemStack.getNbt().contains("DLC_INDEX")) {
+				NbtCompound nbt = itemStack.getNbt();
+				int index = nbt.getInt("DLC_INDEX");
+				int counter = nbt.getInt("DLC_COUNTER");
+				int finalI = i;
+				if (index == 0) {
+					if (Objects.equals(damageSource.getName(), "hotFloor")) {
+						cir.setReturnValue(true);
+						if (counter >= 60) {
+							itemStack.damage(1, player, (p) -> {
+								p.getInventory().setStack(finalI, DLC_Items.EMPTY_MODULE.getDefaultStack());
+							});
+							counter = 0;
 						}
-					}
-					if (index == 1) {
-						if (Objects.equals(damageSource.getName(), "inFire")) {
-							cir.setReturnValue(true);
-							fmi.setCounter(fmi.getCounter()+1);
-							if (fmi.getCounter() >= 20) {
-								itemStack.damage(1, player, (p) -> {
-									p.getInventory().setStack(finalI, DLC_Items.EMPTY_MODULE.getDefaultStack());
-								});
-								fmi.setCounter(0);
-							}
-						}
-					}
-					if (index == 2) {
-						if (Objects.equals(damageSource.getName(), "onFire")) {
-							cir.setReturnValue(true);
-							fmi.setCounter(fmi.getCounter()+1);
-							if (fmi.getCounter() >= 60) {
-								itemStack.damage(1, player, (p) -> {
-									p.getInventory().setStack(finalI, DLC_Items.EMPTY_MODULE.getDefaultStack());
-								});
-								fmi.setCounter(0);
-							}
-						}
+						counter++;
 					}
 				}
+				if (index == 1) {
+					if (Objects.equals(damageSource.getName(), "inFire")) {
+						cir.setReturnValue(true);
+						if (counter >= 40) {
+							itemStack.damage(1, player, (p) -> {
+								p.getInventory().setStack(finalI, DLC_Items.EMPTY_MODULE.getDefaultStack());
+							});
+							counter = 0;
+						}
+						counter++;
+					}
+				}
+				if (index == 2) {
+					if (Objects.equals(damageSource.getName(), "onFire")) {
+						cir.setReturnValue(true);
+						if (counter >= 20) {
+							itemStack.damage(1, player, (p) -> {
+								p.getInventory().setStack(finalI, DLC_Items.EMPTY_MODULE.getDefaultStack());
+							});
+							counter = 0;
+						}
+						counter++;
+					}
+				}
+
+				nbt.putInt("DLC_COUNTER", counter);
+			}
 		}
 	}
 
