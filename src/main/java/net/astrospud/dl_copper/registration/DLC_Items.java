@@ -44,7 +44,6 @@ public class DLC_Items {
     public static Item BATTERY_PACK_EMPTY;
     public static Item COPPER_HAMMER;
     public static Item EMPTY_MODULE;
-    public static Item BURNT_MODULE;
 
     public static Item registerItem(Item item, String name) {
         return Registry.register(Registries.ITEM, new Identifier(DL_Copper.MOD_ID, name), item);
@@ -58,7 +57,6 @@ public class DLC_Items {
         BATTERY_PACK = registerItem(new BatteryPackItem(new FabricItemSettings().maxDamage(256)), "battery_pack");
         BATTERY_PACK_EMPTY = registerItem(new Item(new FabricItemSettings().maxCount(1)), "battery_pack_empty");
         EMPTY_MODULE = registerItem(new Item(new FabricItemSettings()), "empty_module");
-        BURNT_MODULE = registerItem(new Item(new FabricItemSettings()), "burnt_module");
         FLAMEWAKER_MODULE_BOOTS = registerItem(new FlamewakerModuleItem(new FabricItemSettings()), "flamewaker_module_boots");
         JETFALL_MODULE_BOOTS = registerItem(new JetfallModuleItem(new FabricItemSettings()), "jetfall_module_boots");
         JETFALL_COMPUTER_BOOTS = registerItem(new JetfallModuleItem(new FabricItemSettings(), true), "jetfall_computer_boots");
@@ -95,9 +93,6 @@ public class DLC_Items {
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(content -> {
             content.addAfter(Items.NETHERITE_INGOT, EMPTY_MODULE);
-        });
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(content -> {
-            content.addAfter(EMPTY_MODULE, BURNT_MODULE);
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> {
             content.add(BATTERY_PACK);
