@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:comparator"
+    },
+    "X": {
+      "item": "dl_copper:flamewaker_module_boots"
+    },
+    "H": {
+      "item": "minecraft:magma_cream"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "#H#"
+  ],
+  "result": {
+    "item": "dl_copper:flamewaker_computer_boots"
+  }
+}

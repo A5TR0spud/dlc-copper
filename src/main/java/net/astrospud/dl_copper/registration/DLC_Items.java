@@ -24,6 +24,7 @@ import net.minecraft.util.Identifier;
 public class DLC_Items {
     public static Item BAROMETER;
     public static Item FLAMEWAKER_MODULE_BOOTS;
+    public static Item FLAMEWAKER_COMPUTER_BOOTS;
     public static Item JETFALL_MODULE_BOOTS;
     public static Item JETFALL_COMPUTER_BOOTS;
     public static Item LEAPER_MODULE_LEGGINGS;
@@ -60,6 +61,7 @@ public class DLC_Items {
         BATTERY_PACK_EMPTY = registerItem(new Item(new FabricItemSettings().maxCount(1)), "battery_pack_empty");
         EMPTY_MODULE = registerItem(new Item(new FabricItemSettings()), "empty_module");
         FLAMEWAKER_MODULE_BOOTS = registerItem(new FlamewakerModuleItem(new FabricItemSettings()), "flamewaker_module_boots");
+        FLAMEWAKER_COMPUTER_BOOTS = registerItem(new FlamewakerModuleItem(new FabricItemSettings(), true), "flamewaker_computer_boots");
         JETFALL_MODULE_BOOTS = registerItem(new JetfallModuleItem(new FabricItemSettings()), "jetfall_module_boots");
         JETFALL_COMPUTER_BOOTS = registerItem(new JetfallModuleItem(new FabricItemSettings(), true), "jetfall_computer_boots");
         LEAPER_MODULE_LEGGINGS = registerItem(new LeaperModuleItem(new FabricItemSettings()), "leaper_module_leggings");
@@ -149,6 +151,9 @@ public class DLC_Items {
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> {
             content.addAfter(SOLAR_MODULE_HELMET, SOLAR_COMPUTER_HELMET);
+        });
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> {
+            content.addAfter(FLAMEWAKER_MODULE_BOOTS, FLAMEWAKER_COMPUTER_BOOTS);
         });
         DL_Copper.LOGGER.info("Item Groups - Registered");
     }

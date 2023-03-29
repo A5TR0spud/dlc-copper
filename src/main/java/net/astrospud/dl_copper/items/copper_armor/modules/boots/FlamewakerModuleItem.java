@@ -15,10 +15,14 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class FlamewakerModuleItem extends ModuleItem {
-    BlockPos oldPos = null;
+    BlockPos oldPos;
 
     public FlamewakerModuleItem(Settings settings) {
         super(settings, DLC_Items.COPPER_BOOTS);
+    }
+
+    public FlamewakerModuleItem(Settings settings, boolean isComputer) {
+        super(settings, DLC_Items.COPPER_BOOTS, isComputer);
     }
 
     @Override
@@ -34,9 +38,11 @@ public class FlamewakerModuleItem extends ModuleItem {
         //floor fire
         if (index == 2) {
             BlockPos pos = player.getBlockPos();
-            if (oldPos != null
-                    && oldPos != pos
-                    && player.isOnGround()) {
+            if (
+                    oldPos != null
+                    && !oldPos.equals(pos)
+                    && player.isOnGround()
+            ) {
                 stack.damage(1, player, (p) -> {
                     p.getInventory().setStack(slot, DLC_Items.EMPTY_MODULE.getDefaultStack());
                 });
@@ -45,7 +51,7 @@ public class FlamewakerModuleItem extends ModuleItem {
                 world.spawnEntity(c);
                 //world.setBlockState(pos, Blocks.FIRE.getDefaultState());
             }
-            this.oldPos = pos;
+            oldPos = pos;
         }
     }
 

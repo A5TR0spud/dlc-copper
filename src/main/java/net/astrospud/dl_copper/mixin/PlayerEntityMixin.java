@@ -36,12 +36,12 @@ public class PlayerEntityMixin {
 
 		for(int i = 0; i < inv.size(); ++i) {
 			ItemStack itemStack = inv.getStack(i);
-			if (itemStack.getItem() instanceof FlamewakerModuleItem && itemStack.getNbt() != null && itemStack.getNbt().contains("DLC_INDEX")) {
+			if (itemStack.getItem() instanceof FlamewakerModuleItem fmi && itemStack.getNbt() != null && itemStack.getNbt().contains("DLC_INDEX")) {
 				NbtCompound nbt = itemStack.getNbt();
 				int index = nbt.getInt("DLC_INDEX");
 				int counter = nbt.getInt("DLC_COUNTER");
 				int finalI = i;
-				if (index == 0) {
+				if (index == 0 || fmi.isComputer()) {
 					if (Objects.equals(damageSource.getName(), "hotFloor")) {
 						cir.setReturnValue(true);
 						if (counter >= 60) {
@@ -53,7 +53,7 @@ public class PlayerEntityMixin {
 						counter++;
 					}
 				}
-				if (index == 1) {
+				if (index == 1 || fmi.isComputer()) {
 					if (Objects.equals(damageSource.getName(), "inFire")) {
 						cir.setReturnValue(true);
 						if (counter >= 40) {
@@ -65,7 +65,7 @@ public class PlayerEntityMixin {
 						counter++;
 					}
 				}
-				if (index == 2) {
+				if (index == 2 || fmi.isComputer()) {
 					if (Objects.equals(damageSource.getName(), "onFire")) {
 						cir.setReturnValue(true);
 						if (counter >= 20) {
