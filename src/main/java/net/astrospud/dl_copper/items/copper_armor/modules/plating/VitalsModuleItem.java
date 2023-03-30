@@ -22,7 +22,7 @@ public class VitalsModuleItem extends ModuleItem {
         if (index <= 2 && player.getHealth() < player.getMaxHealth() && counter == 40) {
             player.heal(1);
             stack.damage(1, player, (p) -> {
-                p.getInventory().setStack(slot, DLC_Items.EMPTY_MODULE.getDefaultStack());
+                p.getInventory().setStack(slot, getBrokenState(stack));
             });
             for (int i = 0; i < 3; i++) {
                 world.addParticle(ParticleTypes.HEART, player.getX()+(0.5-player.getRandom().nextFloat()), (player.getY()+player.getEyeY())/2, player.getZ()+(0.5-player.getRandom().nextFloat()), 0,0,0);

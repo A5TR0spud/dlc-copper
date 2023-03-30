@@ -21,7 +21,7 @@ public class SatiatorModuleItem extends ModuleItem {
                     player.eatFood(world, item);
                     player.getInventory().setStack(i, item);
                     stack.damage(1, player, (p) -> {
-                        p.getInventory().setStack(slot, DLC_Items.EMPTY_MODULE.getDefaultStack());
+                        p.getInventory().setStack(slot, getBrokenState(stack));
                     });
                 }
             }

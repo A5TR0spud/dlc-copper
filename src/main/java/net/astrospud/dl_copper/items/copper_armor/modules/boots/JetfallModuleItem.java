@@ -21,7 +21,7 @@ public class JetfallModuleItem extends ModuleItem {
     public void specialTick(ItemStack stack, World world, PlayerEntity player, int slot, boolean selected, int index) {
         if (index == 0 && player.fallDistance > player.getSafeFallDistance()) {
             stack.damage(1, player, (p) -> {
-                p.getInventory().setStack(slot, DLC_Items.EMPTY_MODULE.getDefaultStack());
+                p.getInventory().setStack(slot, getBrokenState(stack));
             });
             float multiplier = 0.7f;
             player.fallDistance *= multiplier;
@@ -36,7 +36,7 @@ public class JetfallModuleItem extends ModuleItem {
         if (index == 1 && player.fallDistance > 0) {
             if (counter == 30) {
                 stack.damage(1, player, (p) -> {
-                    p.getInventory().setStack(slot, DLC_Items.EMPTY_MODULE.getDefaultStack());
+                    p.getInventory().setStack(slot, getBrokenState(stack));
                 });
             }
             float multiplier = 0.7f;

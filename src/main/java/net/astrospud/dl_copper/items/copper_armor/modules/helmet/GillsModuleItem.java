@@ -22,7 +22,7 @@ public class GillsModuleItem extends ModuleItem {
             didSomething = true;
             if (counter == 20) {
                 stack.damage(1, player, (p) -> {
-                    p.getInventory().setStack(slot, DLC_Items.EMPTY_MODULE.getDefaultStack());
+                    p.getInventory().setStack(slot, getBrokenState(stack));
                 });
             }
         }

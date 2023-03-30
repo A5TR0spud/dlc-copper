@@ -44,7 +44,7 @@ public class FlamewakerModuleItem extends ModuleItem {
                     && player.isOnGround()
             ) {
                 stack.damage(1, player, (p) -> {
-                    p.getInventory().setStack(slot, DLC_Items.EMPTY_MODULE.getDefaultStack());
+                    p.getInventory().setStack(slot, getBrokenState(stack));
                 });
                 MoltenCopperEntity c = new MoltenCopperEntity(player, world);
                 c.setPosition(player.getX() + player.getBoundingBox().getXLength() / 2 - c.getBoundingBox().getXLength() / 2, player.getY(), player.getZ() + player.getBoundingBox().getZLength() / 2 - c.getBoundingBox().getZLength() / 2);

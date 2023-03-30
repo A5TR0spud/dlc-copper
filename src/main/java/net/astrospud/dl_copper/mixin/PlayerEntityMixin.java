@@ -46,7 +46,7 @@ public class PlayerEntityMixin {
 						cir.setReturnValue(true);
 						if (counter >= 60) {
 							itemStack.damage(1, player, (p) -> {
-								p.getInventory().setStack(finalI, DLC_Items.EMPTY_MODULE.getDefaultStack());
+								p.getInventory().setStack(finalI, fmi.getBrokenState(itemStack));
 							});
 							counter = 0;
 						}
@@ -58,7 +58,7 @@ public class PlayerEntityMixin {
 						cir.setReturnValue(true);
 						if (counter >= 40) {
 							itemStack.damage(1, player, (p) -> {
-								p.getInventory().setStack(finalI, DLC_Items.EMPTY_MODULE.getDefaultStack());
+								p.getInventory().setStack(finalI, fmi.getBrokenState(itemStack));
 							});
 							counter = 0;
 						}
@@ -70,7 +70,7 @@ public class PlayerEntityMixin {
 						cir.setReturnValue(true);
 						if (counter >= 20) {
 							itemStack.damage(1, player, (p) -> {
-								p.getInventory().setStack(finalI, DLC_Items.EMPTY_MODULE.getDefaultStack());
+								p.getInventory().setStack(finalI, fmi.getBrokenState(itemStack));
 							});
 							counter = 0;
 						}
@@ -97,13 +97,13 @@ public class PlayerEntityMixin {
 		PlayerInventory inv = player.getInventory();
 		int lightningCount = 0;
 
-		for(int i = 0; i < inv.size()&& lightningCount <= 3; ++i) {
+		for(int i = 0; i < inv.size() && lightningCount <= 3; ++i) {
 			ItemStack itemStack = inv.getStack(i);
-			if (itemStack.getItem() instanceof LightningModuleItem) {
+			if (itemStack.getItem() instanceof LightningModuleItem lmi) {
 				lightningCount++;
 				int finalI = i;
 				itemStack.damage(32, player, (p) -> {
-					p.getInventory().setStack(finalI, ItemStack.EMPTY);
+					p.getInventory().setStack(finalI, lmi.getBrokenState(itemStack));
 				});
 			}
 		}

@@ -35,4 +35,9 @@ public class LightningModuleItem extends ModuleItem {
     public String id() {
         return "lightning_plating";
     }
+
+    @Override
+    public ItemStack getBrokenState(ItemStack beforeBreak) {
+        return DLC_Items.BURNT_MODULE.getDefaultStack();
+    }
 }

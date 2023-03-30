@@ -1,5 +1,6 @@
 package net.astrospud.dl_copper.items.copper_armor;
 
+import net.astrospud.dl_copper.registration.DLC_Items;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -122,5 +123,9 @@ public class ModuleItem extends Item {
 
     public String id() {
         return "";
+    }
+
+    public ItemStack getBrokenState(ItemStack beforeBreak) {
+        return DLC_Items.EMPTY_MODULE.getDefaultStack();
     }
 }
