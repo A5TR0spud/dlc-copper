@@ -65,7 +65,7 @@ public class JetfallModuleItem extends ModuleItem {
     public void afterTick(ItemStack stack, World world, PlayerEntity player, int slot, boolean selected) {
         super.afterTick(stack, world, player, slot, selected);
 
-        if (counter > 60) counter = 0;
+        if (counter > 90) counter = 0;
         if (didSomething) counter++;
         didSomething = false;
     }

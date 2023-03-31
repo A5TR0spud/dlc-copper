@@ -52,7 +52,7 @@ public class JetpackModuleItem extends ModuleItem {
                     if (index == 1)
                         player.fallDistance *= 0.3;
                     didSomething = true;
-                    if (counter == 30) {
+                    if (counter == 1) {
                         stack.damage(1, player, (p) -> {
                             p.getInventory().setStack(slot, getBrokenState(stack));
                         });
@@ -70,7 +70,7 @@ public class JetpackModuleItem extends ModuleItem {
     public void afterTick(ItemStack stack, World world, PlayerEntity player, int slot, boolean selected) {
         super.afterTick(stack, world, player, slot, selected);
 
-        if (counter > 60) counter = 0;
+        if (counter > 3) counter = 0;
         if (didSomething) counter++;
     }
 
