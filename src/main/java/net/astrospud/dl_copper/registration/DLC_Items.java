@@ -10,8 +10,10 @@ import net.astrospud.dl_copper.items.copper_armor.modules.boots.FlipperModuleIte
 import net.astrospud.dl_copper.items.copper_armor.modules.boots.JetfallModuleItem;
 import net.astrospud.dl_copper.items.copper_armor.modules.greaves.LeaperModuleItem;
 import net.astrospud.dl_copper.items.copper_armor.modules.helmet.GillsModuleItem;
+import net.astrospud.dl_copper.items.copper_armor.modules.helmet.NightVisionModuleItem;
 import net.astrospud.dl_copper.items.copper_armor.modules.helmet.SatiatorModuleItem;
 import net.astrospud.dl_copper.items.copper_armor.modules.helmet.SolarModuleItem;
+import net.astrospud.dl_copper.items.copper_armor.modules.plating.JetpackModuleItem;
 import net.astrospud.dl_copper.items.copper_armor.modules.plating.LightningModuleItem;
 import net.astrospud.dl_copper.items.copper_armor.modules.plating.VitalsModuleItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -39,6 +41,9 @@ public class DLC_Items {
     public static Item SOLAR_MODULE_HELMET;
     public static Item SOLAR_COMPUTER_HELMET;
     public static Item LIGHTNING_MODULE_PLATING;
+    public static Item NIGHT_VISION_MODULE_HELMET;
+    public static Item JETPACK_MODULE_PLATING;
+    public static Item JETPACK_COMPUTER_PLATING;
     public static Item COPPER_HELMET = registerItem(new CopperArmorItem(ArmorItem.Type.HELMET, new FabricItemSettings()), "copper_helmet");
     public static Item COPPER_CHESTPLATE = registerItem(new CopperArmorItem(ArmorItem.Type.CHESTPLATE, new FabricItemSettings()), "copper_chestplate");
     public static Item COPPER_LEGGINGS = registerItem(new CopperArmorItem(ArmorItem.Type.LEGGINGS, new FabricItemSettings()), "copper_leggings");
@@ -78,6 +83,9 @@ public class DLC_Items {
         SOLAR_COMPUTER_HELMET = registerItem(new SolarModuleItem(new FabricItemSettings(), true), "solar_computer_helmet");
         SATIATOR_MODULE_HELMET = registerItem(new SatiatorModuleItem(new FabricItemSettings()), "satiator_module_helmet");
         LIGHTNING_MODULE_PLATING = registerItem(new LightningModuleItem(new FabricItemSettings()), "lightning_module_plating");
+        NIGHT_VISION_MODULE_HELMET = registerItem(new NightVisionModuleItem(new FabricItemSettings()), "night_vision_module_helmet");
+        JETPACK_MODULE_PLATING = registerItem(new JetpackModuleItem(new FabricItemSettings()), "jetpack_module_plating");
+        JETPACK_COMPUTER_PLATING = registerItem(new JetpackModuleItem(new FabricItemSettings(), true), "jetpack_computer_plating");
         DL_Copper.LOGGER.info("Items - Registered");
         DL_Copper.LOGGER.info("Item Groups - Registering");
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> {
@@ -120,10 +128,16 @@ public class DLC_Items {
             content.addAfter(SATIATOR_MODULE_HELMET, GILLS_MODULE_HELMET);
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> {
+            content.addAfter(GILLS_MODULE_HELMET, NIGHT_VISION_MODULE_HELMET);
+        });
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> {
             content.add(VITALS_MODULE_PLATING);
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> {
             content.addAfter(VITALS_MODULE_PLATING, LIGHTNING_MODULE_PLATING);
+        });
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> {
+            content.addAfter(LIGHTNING_MODULE_PLATING, JETPACK_MODULE_PLATING);
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> {
             content.add(LEAPER_MODULE_LEGGINGS);
@@ -159,6 +173,9 @@ public class DLC_Items {
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> {
             content.addAfter(FLAMEWAKER_MODULE_BOOTS, FLAMEWAKER_COMPUTER_BOOTS);
+        });
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> {
+            content.addAfter(JETPACK_MODULE_PLATING, JETPACK_COMPUTER_PLATING);
         });
         DL_Copper.LOGGER.info("Item Groups - Registered");
     }

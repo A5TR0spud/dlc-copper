@@ -1,0 +1,26 @@
+{
+  "jetpack_ignite": {
+    "subtitle": "dl_copper.jetpack_ignite",
+    "sounds": [
+      "dl_copper:jetpack_ignite"
+    ]
+  },
+  "jetfall_save": {
+    "subtitle": "dl_copper.jetfall_save",
+    "sounds": [
+      "dl_copper:jetfall_engage"
+    ]
+  },
+  "jetpack_burn": {
+    "subtitle": "dl_copper.jetpack_burn",
+    "sounds": [
+      "dl_copper:jetpack_burn"
+    ]
+  },
+  "jetfall_burn": {
+    "subtitle": "dl_copper.jetfall_burn",
+    "sounds": [
+      "dl_copper:jetfall_burn"
+    ]
+  }
+}

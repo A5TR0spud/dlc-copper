@@ -4,11 +4,8 @@
     "#": {
       "item": "dl_copper:empty_module"
     },
-    "X": {
-      "item": "minecraft:golden_carrot"
-    },
-    "R": {
-      "item": "minecraft:rotten_flesh"
+    "P": {
+      "item": "minecraft:firework_rocket"
     },
     "g": [
       {"item": "minecraft:coal"},
@@ -16,10 +13,11 @@
     ]
   },
   "pattern": [
-    "R#X",
-    "g g"
+    "g g",
+    "P#P",
+    "ggg"
   ],
   "result": {
-    "item": "dl_copper:satiator_module_helmet"
+    "item": "dl_copper:jetpack_module_plating"
   }
 }

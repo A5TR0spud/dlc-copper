@@ -15,6 +15,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 public class ModuleItem extends Item {
     Item linkedItem;
@@ -54,11 +55,10 @@ public class ModuleItem extends Item {
         }
 
         if (entity instanceof PlayerEntity player) {
-            ArrayList<ItemStack> armor = new ArrayList<>();
-            entity.getArmorItems().forEach(armor::add);
             boolean wearing = false;
-            for (ItemStack itemStack : armor) {
-                if (itemStack.getItem() == this.linkedItem) {
+            Iterable<ItemStack> armorItems = entity.getArmorItems();
+            for (ItemStack itemStack : armorItems) {
+                if (itemStack.getItem().equals(this.linkedItem)) {
                     wearing = true;
                     break;
                 }

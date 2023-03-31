@@ -26,7 +26,7 @@ public class LeaperModuleItem extends ModuleItem {
                 float f = -MathHelper.sin(yaw * 0.017453292F);
                 float h = MathHelper.cos(yaw * 0.017453292F);
                 player.addVelocity(0.02f * f, 0.015, 0.02f * h);
-                world.addParticle(ParticleTypes.CLOUD.getType(), player.getX(), ((player.getY()+player.getEyeY())/2)-(player.getStandingEyeHeight()/2)+(player.getRandom().nextFloat()*0.75), player.getZ(), (0.5f*player.getVelocity().x)+(0.25*(0.5-player.getRandom().nextFloat())), 0, (0.5f*player.getVelocity().z)+(0.25*(0.5-player.getRandom().nextFloat())));
+                world.addParticle(ParticleTypes.ELECTRIC_SPARK.getType(), player.getX(), ((player.getY()+player.getEyeY())/2)-(player.getStandingEyeHeight()/2)+(player.getRandom().nextFloat()*0.75), player.getZ(), (0.5f*player.getVelocity().x)+(0.25*(0.5-player.getRandom().nextFloat())), 0, (0.5f*player.getVelocity().z)+(0.25*(0.5-player.getRandom().nextFloat())));
                 didSomething = true;
                 if (counter == 10) {
                     stack.damage(1, player, (p) -> {

@@ -87,12 +87,12 @@ public class PlayerEntityMixin {
 	public void dlcAttack(Entity target, CallbackInfo cir) {
 		PlayerEntity player = (PlayerEntity) (Object) this;
 
-		if (!target.isAttackable()) {
+		if (!target.isAttackable())
 			return;
-		}
-		if (target.handleAttack(player)) {
+		if (target.handleAttack(player))
 			return;
-		}
+		if (player.getItemCooldownManager().isCoolingDown(DLC_Items.LIGHTNING_MODULE_PLATING))
+			return;
 
 		PlayerInventory inv = player.getInventory();
 		int lightningCount = 0;
@@ -105,6 +105,7 @@ public class PlayerEntityMixin {
 				itemStack.damage(32, player, (p) -> {
 					p.getInventory().setStack(finalI, lmi.getBrokenState(itemStack));
 				});
+				player.getItemCooldownManager().set(DLC_Items.LIGHTNING_MODULE_PLATING, 20);
 			}
 		}
 

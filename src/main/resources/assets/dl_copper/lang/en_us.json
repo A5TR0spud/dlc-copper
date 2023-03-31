@@ -15,11 +15,14 @@
   "item.dl_copper.vitals_module_plating": "Vitals Module (Plating)",
   "item.dl_copper.lightning_module_plating": "Taser Module (Plating)",
   "item.dl_copper.vitals_computer_plating": "Vitals Computer (Plating)",
+  "item.dl_copper.jetpack_module_plating": "Jetpack Module (Plating)",
+  "item.dl_copper.jetpack_computer_plating": "Jetpack Computer (Plating)",
   "item.dl_copper.gills_module_helmet": "Gills Module (Helmet)",
   "item.dl_copper.gills_computer_helmet": "Gills Computer (Helmet)",
   "item.dl_copper.solar_module_helmet": "Solar Module (Helmet)",
   "item.dl_copper.solar_computer_helmet": "Solar Computer (Helmet)",
   "item.dl_copper.satiator_module_helmet": "Satiator Module (Helmet)",
+  "item.dl_copper.night_vision_module_helmet": "Darkvision Module (Helmet)",
   "item.dl_copper.copper_hammer": "Copper Hammer",
   "item.dl_copper.battery_pack": "Battery Pack",
   "item.dl_copper.battery_pack_empty": "Empty Battery Pack",
@@ -39,5 +42,10 @@
   "tooltip.dl_copper.comp.2": "Level 2",
   "tooltip.dl_copper.comp.3": "Level 3",
   "tooltip.dl_copper.comp.4": "Level 4",
-  "tooltip.dl_copper.comp.5": "Level 5"
+  "tooltip.dl_copper.comp.5": "Level 5",
+
+  "dl_copper.jetpack_ignite": "Jetpack Ignites",
+  "dl_copper.jetfall_save": "Jetfall Engages",
+  "dl_copper.jetpack_burn": "Jetpack Burns",
+  "dl_copper.jetfall_burn": "Jetfall Burns"
 }

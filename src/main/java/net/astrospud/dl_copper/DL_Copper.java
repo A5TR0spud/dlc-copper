@@ -2,6 +2,7 @@ package net.astrospud.dl_copper;
 
 import net.astrospud.dl_copper.registration.DLC_Entities;
 import net.astrospud.dl_copper.registration.DLC_Items;
+import net.astrospud.dl_copper.registration.DLC_Sounds;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +19,7 @@ public class DL_Copper implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
+		DLC_Sounds.init();
 		DLC_Entities.init();
 		DLC_Items.init();
 		LOGGER.info("Hello Fabric world!");

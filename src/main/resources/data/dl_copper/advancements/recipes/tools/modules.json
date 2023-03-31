@@ -66,6 +66,18 @@
         "recipe": "dl_copper:lightning_module_plating"
       },
       "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_nv_recipe": {
+      "conditions": {
+        "recipe": "dl_copper:night_vision_module_helmet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_jetpack_recipe": {
+      "conditions": {
+        "recipe": "dl_copper:jetpack_module_plating"
+      },
+      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
@@ -79,10 +91,12 @@
       "has_leaper_recipe",
 
       "has_vitals_recipe",
+      "has_jetpack_recipe",
 
       "has_gills_recipe",
       "has_satiator_recipe",
       "has_solar_recipe",
+      "has_nv_recipe",
 
       "has_lightning_recipe"
     ]
@@ -96,12 +110,13 @@
       "dl_copper:leaper_module_leggings",
 
       "dl_copper:vitals_module_plating",
+      "dl_copper:jetpack_module_plating",
+      "dl_copper:lightning_module_plating",
 
       "dl_copper:gills_module_helmet",
       "dl_copper:satiator_module_helmet",
       "dl_copper:solar_module_helmet",
-
-      "dl_copper:lightning_module_plating"
+      "dl_copper:night_vision_module_helmet"
     ]
   }
 }

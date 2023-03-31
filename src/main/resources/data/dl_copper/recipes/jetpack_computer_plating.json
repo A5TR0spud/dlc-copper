@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:comparator"
+    },
+    "X": {
+      "item": "dl_copper:jetpack_module_plating"
+    },
+    "H": {
+      "item": "minecraft:phantom_membrane"
+    }
+  },
+  "pattern": [
+    "XX ",
+    "#H#"
+  ],
+  "result": {
+    "item": "dl_copper:jetpack_computer_plating"
+  }
+}
